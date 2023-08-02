@@ -1,0 +1,25 @@
+<div class = "row">
+    <h2> Registered Student List</h2>
+</div>
+
+<table class = "table table-striped ">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Contact No</th>
+            <th>Event</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let registrationData of registrationData" >
+            <td>{{registrationData.id}}</td>
+            <td> {{ registrationData.name }} </td>
+            <td> {{ registrationData.email}} </td>
+            <td> {{ registrationData.phone}} </td>
+            <td> {{ registrationData.event}} </td> 
+            
+        </tr>
+    </tbody>
+</table>

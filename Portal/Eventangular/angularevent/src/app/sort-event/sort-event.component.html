@@ -1,0 +1,75 @@
+<div>
+  <h2>Sort Events</h2>
+  <br>
+  <div>
+    <label for="standard">Standard:</label>&nbsp;&nbsp;
+    <select id="standard" (change)="onStandardChange($event)">
+      <option value="">--Select--</option>
+      <option *ngFor="let standard of standards" [value]="standard">{{ standard }}</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <label for="section">Section:</label>&emsp;&nbsp;
+    <select id="section" (change)="onSectionChange($event)">
+      <option value="">--Select--</option>
+      <option *ngFor="let section of sections" [value]="section">{{ section }}</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <label for="user-type">User Type:</label>&nbsp;
+    <select id="user-type" (change)="onUserTypeChange($event)">
+      <option value="">--Select--</option>
+      <option *ngFor="let userType of userTypes" [value]="userType">{{ userType }}</option>
+    </select>
+  </div>
+  <br>
+  <button (click)="sortEvent()">Sort</button>
+  <div *ngIf="(sortedEvents$ | async) as sortedEvents">
+    <div *ngFor="let eventGroup of sortedEvents | keyvalue">
+      <h3>{{ eventGroup.key }}</h3>
+      <ul>
+        <li *ngFor="let event of eventGroup.value">
+          {{ event.name }}
+       
+  
+      <div>
+        <label><b>Id:</b></label> {{ event.id }}
+      </div>
+      <div>
+        <label><b>Event Name:</b></label> {{ event.name }}
+      </div>
+      <div>
+        <label><b>Description:</b></label> {{ event.description }}
+      </div>
+      <div>
+        <label><b>Start Date:</b></label> {{ event.start_date }}
+      </div>
+      <div>
+        <label><b>End Date:</b></label> {{ event.end_date }}
+      </div>
+      <div>
+        <label><b>Location:</b></label> {{ event.location }}
+      </div>
+      <div>
+        <label><b>Category:</b></label> {{ event.category }}
+      </div>
+      <div>
+        <label><b>Limitation:</b></label> {{ event.attendee_limit }}
+      </div>
+      <div>
+        <label><b>Deadline:</b></label> {{ event.registration_deadline }}
+      </div>
+      <div>
+        <label><b>Fee:</b></label> {{ event.fee }}
+      </div>
+      <div>
+        <label><b>Organizer:</b></label> {{ event.organizer }}
+      </div>
+      <div>
+        <label><b>Contact:</b></label> {{ event.contact_person }}
+      </div>
+      <div>
+        <label><b>Email Id:</b></label> {{ event.contact_email }}
+      </div>

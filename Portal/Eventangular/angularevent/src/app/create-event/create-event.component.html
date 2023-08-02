@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Create Event </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label> Id</label>
+                        <input type="number" class="form-control" id="id" [(ngModel)]="event.id" name="id">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Event Name</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="event.name" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Filters</label>
+                        <input type="text" class="form-control" id="options" [(ngModel)]="event.options" name="options">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Description</label>
+                        <input type="text" class="form-control" id="description" [(ngModel)]="event.description" name="description">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Start Date</label>
+                        <input type="date" class="form-control" id="start_date" [(ngModel)]="event.start_date" name="start_date">
+                    </div>
+
+                    <div class="form-group">
+                        <label> End Date</label>
+                        <input type="date" class="form-control" id="end_date" [(ngModel)]="event.end_date" name="end_date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label> Location</label>
+                        <input type="text" class="form-control" id="location" [(ngModel)]="event.location" name="location">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Category</label>
+                        <input type="text" class="form-control" id="category" [(ngModel)]="event.category" name="category">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Limitation</label>
+                        <input type="number" class="form-control" id="attendee_limit" [(ngModel)]="event.attendee_limit" name="attendee_limit">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Deadline</label>
+                        <input type="date" class="form-control" id="registration_deadline" [(ngModel)]="event.registration_deadline" name="registration_deadline">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Fee</label>
+                        <input type="number" class="form-control" id="fee" [(ngModel)]="event.fee" name="fee">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Organizer</label>
+                        <input type="text" class="form-control" id="organizer" [(ngModel)]="event.organizer" name="organizer">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Contact person</label>
+                        <input type="text" class="form-control" id="contact_person" [(ngModel)]="event.contact_person" name="contact_person">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email Id</label>
+                        <input type="text" class="form-control" id="contact_email" [(ngModel)]="event.contact_email" name="contact_email">
+                    </div>
+
+                    <br />
+                    <button class="btn btn-success"  type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

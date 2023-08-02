@@ -1,0 +1,11 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+table {
+    font-size: 10px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+

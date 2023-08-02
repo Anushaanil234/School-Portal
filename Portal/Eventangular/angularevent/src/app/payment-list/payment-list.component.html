@@ -1,0 +1,24 @@
+<div class="row">
+  <h2>Payment List</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Event ID</th>
+      <th>Amount</th>
+      <th>Payment Date</th>
+      <th>Payment Method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let payment of payments">
+      <td>{{ payment.id }}</td>
+      <td>{{ payment.event_id }}</td>
+      <td>{{ payment.amount }}</td>
+      <td>{{ payment.payment_date }}</td>
+      <td>{{ payment.payment_method }}</td>
+    </tr>
+  </tbody>
+</table>

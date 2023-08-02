@@ -1,0 +1,92 @@
+<div class="container text-center">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <table class="center"></table>
+      <h3 class="text-center">Registration Form</h3>
+      
+      <div class="card-body">
+        <!-- <form (ngSubmit)="onSubmit()"> -->
+          <div class="form-group">
+                   <form (ngSubmit)="onSubmit()"> 
+                    
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="registrationData.name" required>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.['required']">Name is required</div>
+    </div>
+    </div>
+
+
+<!-- <div>
+  <label for="class">Class:</label>
+  <select id="class" name="class" [(ngModel)]="class" required>
+    <option value="">--Select a class--</option>
+    
+      <option value="Class 1A">1A</option>
+      <option value="Class 1B">1B</option>
+      <option value="Class 2A">5A</option>
+      <option value="Class 2B">2B</option>
+    
+    
+  </select>
+  <div *ngIf="class.invalid && (class.dirty || class.touched)">
+    <div *ngIf="class.errors?.['required']">Class and section is required</div>
+  </div>
+</div> -->
+
+<br>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="registrationData.email" required email>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors?.['required']">Email is required</div>
+      <div *ngIf="email.errors?.['email']">Email is invalid</div>
+    </div>
+       </div>
+<br>
+  <div>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="registrationData.phone" required>
+   <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+        <div *ngIf="phone.errors?.['required']">Phone is required</div>
+        <div *ngIf="phone.errors?.['phone']">Phoneis invalid</div>
+      </div>
+    </div>
+<br>  
+
+  <!-- <div>
+    <label for="event">Event:</label>
+    <select id="event" name="event" [(ngModel)]="registrationData.event" required>
+      <option value="">--Select an event--</option>
+      <option *ngFor="let event of events" [value]="event.name">{{event.name}}</option>
+    </select>
+    <div *ngIf="event.invalid && (event.dirty || event.touched)">
+      <div *ngIf="event.errors?.['required']">Event is required</div>
+      <div *ngIf="event.errors?.['event']">Event is invalid</div>
+    </div>
+  </div> -->
+
+  <label for="event">Event:</label>
+<select id="event" name="event" [(ngModel)]="registrationData.event" (change)="onEventSelection()" required>
+  <option value="">--Select an event--</option>
+  <option *ngFor="let event of events" [value]="event.name">{{event.name}}</option>
+</select>
+
+
+    <p>Amount to pay: {{ selectedEventAmount }}</p>
+
+     <button (click)=" goToPayment()" class="btn btn-success" style="font-size: 17px;">Pay</button>  
+
+  <!-- <td><button class="btn btn-success" type="submit">Register</button></td> -->
+        
+  
+</form>
+
+<div *ngIf="registrationSuccessful">
+  <!-- Registration Successful! -->
+</div>
+
+<div *ngIf="formSubmitted && (!registrationData.name || !registrationData.email || !registrationData.phone || !registrationData.event)">
+  Enter all the required details.
+</div>

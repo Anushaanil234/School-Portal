@@ -1,0 +1,50 @@
+<div class = "row">
+    <h2> Event List</h2>
+</div>
+
+<table class = "table table-striped ">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th> Event Name</th>
+            <th>Filters</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Attendee Limit</th>
+            <th>Deadline</th>
+            <th>Fee</th>
+            <th>Organizer</th>
+            <th>Contact Person</th>
+            <th>Contact Email</th>
+            <!-- <th style="width:200px"> Actions </th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let event of event" >
+            <td>{{event.id}}</td>
+            <td> {{ event.name }} </td>
+            <td> {{ event.options}} </td>
+            <td> {{ event.description}} </td>
+            <td> {{ event.start_date}} </td> 
+            <td> {{ event.end_date}} </td>     
+            <td> {{ event.location}} </td>
+            <td> {{ event.category}} </td>
+            <td> {{ event.attendee_limit}} </td>
+            <td> {{ event.registration_deadline}} </td>
+            <td> {{ event.fee}} </td>
+            <td> {{ event.organizer}} </td>
+            <td> {{ event.contact_person}} </td>
+            <td> {{ event.contact_email }} </td>
+            <!-- <td>
+                <div class="btn-group">
+                    <button (click)="updateEvent(event.id)" class="btn btn-secondary" style="font-size: 12px;">Update</button>
+                    <button (click)="deleteEvent(event.id)" class="btn btn-danger" style="font-size: 12px;">Delete</button>
+                    <button (click)="eventDetails(event.id)" class="btn btn-secondary" style="font-size: 12px;">View</button>
+                </div>
+         </td> -->
+        </tr>
+    </tbody>
+</table>
